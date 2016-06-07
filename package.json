@@ -27,7 +27,7 @@
     "lib": "npm run lib-debug && npm run babel && rimraf lib/__tests__ lib/__mocks__",
     "lint": "eslint src && npm run flow",
     "postinstall:bak": "cd lib || npm run lib",
-    "postinstall": "npm run lib-debug && echo 'NO POSTINSTALL NOW'",
+    "postinstall:also-bak": "npm run lib-debug && echo 'NO POSTINSTALL NOW'",
     "prepublish": "npm run lib && npm run dist && not-in-publish || (npm test && npm run lint && npm run deps-fix)",
     "postpublish": "npm run deps-restore",
     "start": "./node_modules/.bin/babel-node examples/server.js",
