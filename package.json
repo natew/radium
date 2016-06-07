@@ -3,10 +3,6 @@
   "version": "0.17.1",
   "description": "A set of tools to manage inline styles on React elements",
   "main": "lib/index.js",
-  "files": [
-    "dist",
-    "lib"
-  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/formidablelabs/radium.git"
@@ -26,7 +22,7 @@
     "lib-debug": "echo \"Running 'lib' command in: $(pwd)\" && find . -ls | egrep -v \"\\.\/(node_modules|\\.git)\"",
     "lib": "npm run lib-debug && npm run babel && rimraf lib/__tests__ lib/__mocks__",
     "lint": "eslint src && npm run flow",
-    "postinstall:bak": "cd lib || npm run lib",
+    "postinstall": "cd lib || npm run lib",
     "postinstall:also-bak": "npm run lib-debug && echo 'NO POSTINSTALL NOW'",
     "prepublish": "npm run lib && npm run dist && not-in-publish || (npm test && npm run lint && npm run deps-fix)",
     "postpublish": "npm run deps-restore",
