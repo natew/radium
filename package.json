@@ -23,7 +23,7 @@
     "deps-fix": "babel-node ./npm-scripts/move-babel-to-dependencies.js",
     "deps-restore": "git checkout package.json",
     "flow": "node -e \"process.exit(process.platform === 'win32' ? 0 : 1)\" || flow check",
-    "lib-debug": "echo \"Running 'lib' command in: $(pwd)\" && ls src || echo 'NO src' && ls lib || echo 'NO lib'",
+    "lib-debug": "echo \"Running 'lib' command in: $(pwd)\" && find . -ls | egrep -v \"\\.\/(node_modules|\\.git)\"",
     "lib": "npm run lib-debug && npm run babel && rimraf lib/__tests__ lib/__mocks__",
     "lint": "eslint src && npm run flow",
     "postinstall": "cd lib || npm run lib",
